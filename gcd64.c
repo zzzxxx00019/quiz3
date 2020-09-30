@@ -14,10 +14,10 @@ uint64_t gcd64(uint64_t u, uint64_t v) {
     }    
 
     while (!(u & 1))
-        u /= 2;
+        u >>= __builtin_ctz(u) ;
     do {
         while (!(v & 1))
-            v /= 2;
+            v >>= __builtin_ctz(v) ;
         
         if (u < v) 
         {

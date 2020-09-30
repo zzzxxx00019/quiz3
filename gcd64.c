@@ -13,10 +13,10 @@ uint64_t gcd64(uint64_t u, uint64_t v) {
         v >>= shift ;
     }    
 
-    while (!(u & 1))
+    if (!(u & 1))
         u >>= __builtin_ctz(u) ;
     do {
-        while (!(v & 1))
+        if (!(v & 1))
             v >>= __builtin_ctz(v) ;
         
         if (u < v) 
